@@ -1,0 +1,75 @@
+Each html page consist of 
+  1. DOCTYPE - Declaration to web browser about the HTML version.
+  2. HEAD (header block), 
+  3. BODY block - All your html webpage will go between body tags.
+  HTML, HEAD, BODY etc are called HTML TAGS. Each tag should have its 
+  closing tags.
+  
+Let's add some HTML tags. There are numerous HTML tags. We will just learn
+the most common ones so that you can create your own website. 
+
+1.HEADING HTML TAGS
+
+  h1, h2, h3.....
+  Notice, it is not case sensitive. 
+  
+2.PARAGRPH TAGS 
+
+  p tags 
+  Notice, that text breaks are not affected. 
+  
+3.LINE BREAK
+
+  <BR> If you want line break at particular paragraph.
+  
+4.TEXT FORMATTING HTML TAGS 
+
+  Bold - <b></b>
+  Italics - <i></i>
+  Underline - <u></u>
+  Center - <center>
+  Strikeout - <strike></strike>
+  Superscript - <sup></sup>
+  Subscript - <sub></sub>
+  
+ 5.LISTS (LIST ITEMS (li))
+ 
+  ORDERED LISTS (ol) - Numbered list
+  
+  <ol>
+	<li>item 1</li>
+	<li>item 2</li>
+	<li>item 3</li>
+  </ol>
+  
+   UNORDERED LISTS (ul) - bullet points
+   
+   <ul>
+	<li>item 1</li>
+	<li>item 2</li>
+	<li>item 3</li>
+	</ul>
+	
+6.COMMENTS
+
+  <!-- comments -->
+  Ctrl + k in a line makes a whole line commented
+
+7.HORIZONTAL LINE
+
+  <HR/>
+  <hr width="50%" size="3" />
+
+8.IMAGE HTML TAG
+
+  <img src="image.png" >
+  <img src="gfg.jpg" width="40" height="40" border="0">
+
+9.HYPERLINKS 
+
+  <a href="">Anchor Text</a>
+	
+10.EMAIL LINKS HTML TAG
+
+  <a href="mailto:someone@example.com">Email Us</a>
+	
