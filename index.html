@@ -1,171 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carina Huang | Personal Website</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <title>Your Name</title>
+  <meta name="description" content="Personal portfolio of Carina Huang." />
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f4f4f4;
-      color: #333;
-    }
+  <!-- Display (intro banner only): Bungee · Body & site headings: Inter · Utility: JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
 
-    header {
-      background: #222;
-      color: white;
-      padding: 20px 0;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    header h1 {
-      margin-bottom: 10px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .hero {
-      background: white;
-      padding: 50px 20px;
-      text-align: center;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    section {
-      background: white;
-      margin-top: 20px;
-      padding: 30px 20px;
-      border-radius: 10px;
-    }
-
-    section h2 {
-      margin-bottom: 15px;
-      color: #222;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
-
-    .project-card {
-      background: #f9f9f9;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-      background: #222;
-      color: white;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
-      background: #0078d7;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .btn:hover {
-      background: #005fa3;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Your Name</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- ============================================================
+       INTRO: concentric "bullseye" rings converge on a center
+       circle, your photo appears inside it, then the whole thing
+       irises open into the site underneath.
+       ============================================================ -->
+  <div id="intro" class="intro" role="presentation">
+    <div class="zoom-stage">
+      <div class="rings" aria-hidden="true">
+        <span class="ring ring--extra-8"></span>
+        <span class="ring ring--extra-7"></span>
+        <span class="ring ring--extra-6"></span>
+        <span class="ring ring--extra-5"></span>
+        <span class="ring ring--extra-4"></span>
+        <span class="ring ring--extra-3"></span>
+        <span class="ring ring--extra-2"></span>
+        <span class="ring ring--extra-1"></span>
+        <span class="ring ring--6"></span>
+        <span class="ring ring--5"></span>
+        <span class="ring ring--4"></span>
+        <span class="ring ring--3"></span>
+        <span class="ring ring--2"></span>
+        <span class="ring ring--1"></span>
+
+        <span class="ring ring--center">
+          <span class="face-frame">
+            <!-- Replace src with your own photo (square image works best).
+                 If it fails to load, a placeholder silhouette shows instead. -->
+            <img
+              class="face-photo"
+              src="images/photocard.jpg"
+              alt="Portrait of Carina Huang"
+              onerror="this.style.display='none'"
+            />
+          </span>
+        </span>
+
+        <div class="intro-banner">
+          <p class="intro-eyebrow">Presenting</p>
+          <h1 class="intro-name">Carina&nbsp;Huang</h1>
+        </div>
+      </div>
     </div>
-  </header>
 
-  <div class="container">
-    <section class="hero">
-      <h2>Hello, I'm Your Name</h2>
-      <p>Welcome to my personal website. I’m a student / developer / designer passionate about building cool things.</p>
-      <a href="#contact" class="btn">Get In Touch</a>
-    </section>
+    <button type="button" id="skipIntro" class="intro-skip">Skip intro</button>
+  </div>
 
-    <section id="about">
-      <h2>About Me</h2>
+  <!-- ============================================================
+       SITE: swap in your real content below.
+       ============================================================ -->
+  <main id="site" class="site" inert>
+
+    <div class="header-wrap">
+      <div class="starfield" aria-hidden="true"></div>
+
+      <header class="nav">
+        <span class="nav-mark">CH</span>
+        <nav aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <p class="hero-eyebrow">Hello, I'm</p>
+        <h1 class="hero-name">Carina Huang</h1>
+        <p class="hero-tagline">A one-line description of what you make or do.</p>
+      </section>
+    </div>
+
+    <section id="about" class="about">
+      <h2 class="section-title">About</h2>
       <p>
-        Write a short introduction about yourself here. You can talk about your background,
-        interests, skills, and what you do.
+        Swap this in for a few sentences about who you are, what you're
+        working on, and what you're looking for right now.
       </p>
     </section>
 
-    <section id="projects">
-      <h2>My Projects</h2>
-      <div class="projects">
-        <div class="project-card">
+    <section id="work" class="work">
+      <h2 class="section-title">Work</h2>
+      <div class="work-grid">
+        <article class="work-card">
           <h3>Project One</h3>
-          <p>Short description of your project.</p>
-        </div>
-        <div class="project-card">
+          <p>A short line about what it is and the part you played in it.</p>
+        </article>
+        <article class="work-card">
           <h3>Project Two</h3>
-          <p>Short description of your project.</p>
-        </div>
-        <div class="project-card">
+          <p>A short line about what it is and the part you played in it.</p>
+        </article>
+        <article class="work-card">
           <h3>Project Three</h3>
-          <p>Short description of your project.</p>
-        </div>
+          <p>A short line about what it is and the part you played in it.</p>
+        </article>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: yourname@example.com</p>
-      <p>LinkedIn: your-link-here</p>
-      <p>GitHub: your-github-here</p>
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:you@example.com">carinahuang06@gmail.com</a>
+        <a href="https://github.com/carinajhh">GitHub</a>
+        <a href="https://www.linkedin.com/in/yourhandle">LinkedIn</a>
+      </div>
     </section>
-  </div>
 
-  <footer>
-    <p>&copy; 2026 Carina Huang. All rights reserved.</p>
-  </footer>
+    <footer class="site-footer">
+      <span>&copy; 2026 Carina Huang</span>
+      <button type="button" id="replayIntro" class="replay-btn">Watch the intro again</button>
+    </footer>
 
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
