@@ -77,25 +77,29 @@
     starfield.innerHTML = "";
 
     const wrapRect = headerWrap.getBoundingClientRect();
-    const buffer = 45; // tighter clearance so stars can spread nearer
-    // the nav row and closer around the hero text
+    const buffer = 16; // tight enough to fit stars in the narrow band
+    // between the nav row and the hero heading
 
-    // exclude the nav bar and each hero text line individually (not
-    // the whole hero block) so stars can spread into the open space
-    // to the left and above the text — the generous buffer is wide
-    // enough to bridge the small gaps between adjacent text lines
-    const exclusionRects = ["nav", "hero-eyebrow", "hero-name", "hero-tagline"]
-      .map((cls) => document.querySelector(`.${cls}`))
-      .filter(Boolean)
-      .map((el) => {
-        const r = el.getBoundingClientRect();
-        return {
-          left: r.left - wrapRect.left - buffer,
-          right: r.right - wrapRect.left + buffer,
-          top: r.top - wrapRect.top - buffer,
-          bottom: r.bottom - wrapRect.top + buffer,
-        };
-      });
+    // exclude the nav logo, each nav link, and each hero text line
+    // individually — NOT the whole nav bar as one rect, which was
+    // blocking the entire (mostly empty) strip above the hero text
+    const exclusionEls = [
+      document.querySelector(".nav-mark"),
+      ...document.querySelectorAll(".nav a"),
+      document.querySelector(".hero-eyebrow"),
+      document.querySelector(".hero-name"),
+      document.querySelector(".hero-tagline"),
+    ].filter(Boolean);
+
+    const exclusionRects = exclusionEls.map((el) => {
+      const r = el.getBoundingClientRect();
+      return {
+        left: r.left - wrapRect.left - buffer,
+        right: r.right - wrapRect.left + buffer,
+        top: r.top - wrapRect.top - buffer,
+        bottom: r.bottom - wrapRect.top + buffer,
+      };
+    });
 
     function overlapsText(x, y) {
       return exclusionRects.some(
@@ -105,16 +109,17 @@
 
     const colors = ["var(--navy)", "var(--marquee-red)", "var(--gold)"];
     const cols = 12;
-    const rows = 10;
+    const rows = 16;
     const cellW = wrapRect.width / cols;
     const cellH = wrapRect.height / rows;
     let i = 0;
 
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
-        // jitter within the cell so it's not a rigid grid
-        const x = col * cellW + cellW * (0.25 + Math.random() * 0.5);
-        const y = row * cellH + cellH * (0.25 + Math.random() * 0.5);
+        // jitter within nearly the whole cell so stars can reach all
+        // the way to the container's edges, not just its center
+        const x = col * cellW + cellW * (0.08 + Math.random() * 0.84);
+        const y = row * cellH + cellH * (0.08 + Math.random() * 0.84);
 
         if (overlapsText(x, y)) continue;
 
