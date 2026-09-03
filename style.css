@@ -322,7 +322,7 @@ button:focus-visible {
 .hero-eyebrow {
   margin: 0 0 0.25em;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--teal);
@@ -355,23 +355,26 @@ button:focus-visible {
   margin: 0 0 1.25rem;
 }
 
-.work .section-title { color: var(--navy); }
-.about .section-title { color: var(--marquee-red); }
+.links .section-title { color: var(--navy); }
+.skills .section-title { color: var(--marquee-red); }
+.about .section-title { color: var(--gold); }
+.hobbies .section-title { color: var(--navy); }
 
-.work,
+.links,
+.skills,
 .about,
-.contact {
+.hobbies {
   padding: 3rem clamp(1.25rem, 5vw, 4rem);
   border-top: 1px solid rgba(13, 27, 42, 0.1);
 }
 
-.work-grid {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.25rem;
 }
 
-.work-card {
+.card {
   padding: 1.5rem;
   background: var(--paper);
   border: 1px solid rgba(13, 27, 42, 0.1);
@@ -379,16 +382,16 @@ button:focus-visible {
   border-radius: 0.5rem;
 }
 
-.work-card:nth-child(2) { border-top-color: var(--marquee-red); }
-.work-card:nth-child(3) { border-top-color: var(--gold); }
+.card:nth-child(2) { border-top-color: var(--marquee-red); }
+.card:nth-child(3) { border-top-color: var(--gold); }
 
-.work-card h3 {
+.card h3 {
   margin: 0 0 0.5em;
   font-family: var(--font-body);
   font-weight: 600;
 }
 
-.work-card p {
+.card p {
   margin: 0;
   font-size: 0.95rem;
   opacity: 0.8;
