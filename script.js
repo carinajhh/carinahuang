@@ -140,6 +140,45 @@
 
   renderStars();
 
+  // About slideshow: five placeholders that can be replaced with images
+  // directly in index.html when the photos are ready.
+  const slides = [...document.querySelectorAll(".slide")];
+  const slideDots = [...document.querySelectorAll(".slide-dot")];
+  const slideClips = [...document.querySelectorAll(".slide-clip")];
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    if (!slides.length) return;
+    currentSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === currentSlide);
+    });
+    slideDots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === currentSlide;
+      dot.classList.toggle("is-active", isActive);
+      if (isActive) dot.setAttribute("aria-current", "true");
+      else dot.removeAttribute("aria-current");
+    });
+    slideClips.forEach((clip, clipIndex) => {
+      // Each decorative clip is ordered to match slides 1 through 4.
+      clip.hidden = clipIndex !== currentSlide;
+    });
+  }
+
+  showSlide(0);
+
+  slides.forEach((slide, slideIndex) => {
+    slide.addEventListener("click", () => {
+      if (slideIndex === currentSlide) showSlide(currentSlide + 1);
+    });
+  });
+
+  slideDots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      showSlide(Number(dot.dataset.slideTo) - 1);
+    });
+  });
+
   let resizeTimer;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);

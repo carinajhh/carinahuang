@@ -76,6 +76,7 @@
         <span class="nav-mark">CH</span>
         <nav aria-label="Primary">
           <a href="#about">About</a>
+          <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#hobbies">Hobbies</a>
           <a href="#links">Links</a>
@@ -91,17 +92,101 @@
 
     <section id="about" class="about">
       <h2 class="section-title">About</h2>
-      <p>
-        My name is Carina Huang, I was born and raised in California to immigrant parents whose hard work and sacrifice 
-        continue to drive everything I do. Following in the footsteps of my two older sisters, I'm determined to make 
-        their efforts worth it.
-      </p>
-      <p>
-        I'm drawn to computer science for the problem solving, that moment when code finally clicks after hours of 
-        debugging, and the satisfaction of building something from nothing. It's a field that constantly teaches me not 
-        just technical skills, but patience and resilience, and I'm always looking for hands on experience, connections, and new 
-        opportunities to keep growing.
-      </p>
+      <div class="about-layout">
+        <div class="about-copy">
+          <p>
+            My name is Carina Huang, I was born and raised in California to immigrant parents whose hard work and sacrifice
+            continue to drive everything I do. Following in the footsteps of my two older sisters, I'm determined to make
+            their efforts worth it.
+          </p>
+          <p>
+            I'm drawn to computer science for the problem solving, that moment when code finally clicks after hours of
+            debugging, and the satisfaction of building something from nothing. It's a field that constantly teaches me not
+            just technical skills, but patience and resilience, and I'm always looking for new hands on experience, connections, and
+            opportunities to keep growing.
+          </p>
+        </div>
+
+        <div class="slideshow" aria-label="About me photo slideshow">
+          <img
+            class="slide-clip slide-clip--graduation"
+            src="images/graduation-cap.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            class="slide-clip slide-clip--badminton"
+            src="images/badminton-clip.png"
+            alt=""
+            aria-hidden="true"
+            hidden
+          />
+          <img
+            class="slide-clip slide-clip--heart"
+            src="images/heart-clip.png"
+            alt=""
+            aria-hidden="true"
+            hidden
+          />
+          <img
+            class="slide-clip slide-clip--travel"
+            src="images/cruise-clip.png"
+            alt=""
+            aria-hidden="true"
+            hidden
+          />
+          <div class="slides" aria-live="polite">
+            <!-- Replace each placeholder with an image when you are ready, for example:
+                 <img src="images/your-photo.jpg" alt="Description of the photo" /> -->
+            <div class="slide is-active" data-slide="1">
+            <img src="images/friends.jpg" alt="Highschool friends!">
+            </div>
+            <div class="slide" data-slide="2">
+              <img src="images/badminton-photo.png" alt="Carina and her badminton teammates at a tournament" />
+            </div>
+            <div class="slide" data-slide="3">
+              <img src="images/family-photo.png" alt="Carina with her family at a dinner gathering" />
+            </div>
+            <div class="slide" data-slide="4">
+              <img src="images/cruise-photo.png" alt="Friends enjoying a cruise vacation" />
+            </div>
+            <div class="slide" data-slide="5">
+              <span class="placeholder-label">Add a picture</span>
+            </div>
+          </div>
+          <div class="slide-dots" aria-label="Choose a slide">
+            <button type="button" class="slide-dot is-active" data-slide-to="1" aria-label="Show slide 1" aria-current="true"></button>
+            <button type="button" class="slide-dot" data-slide-to="2" aria-label="Show slide 2"></button>
+            <button type="button" class="slide-dot" data-slide-to="3" aria-label="Show slide 3"></button>
+            <button type="button" class="slide-dot" data-slide-to="4" aria-label="Show slide 4"></button>
+            <button type="button" class="slide-dot" data-slide-to="5" aria-label="Show slide 5"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-layout">
+        <div class="projects-copy">
+          <p class="placeholder-kicker">Coming soon</p>
+          <h3>Things I'm building</h3>
+          <p>
+            This is a placeholder for a short introduction to my projects. I’ll add more details about the work,
+            ideas, and experiences I’m excited to share here.
+          </p>
+        </div>
+
+        <div class="project-slideshow-placeholder" aria-label="Projects slideshow placeholder">
+          <span class="project-placeholder-label">Project slideshow</span>
+          <span class="project-placeholder-note">Add project images here</span>
+          <div class="project-placeholder-dots" aria-hidden="true">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="skills" class="skills">
