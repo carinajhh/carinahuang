@@ -625,6 +625,31 @@ button:focus-visible {
   transform: scale(1.25);
 }
 
+.slide-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0.8rem 0 0;
+  color: var(--teal-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.slide-hint-arrow {
+  display: inline-block;
+  color: var(--marquee-red);
+  font-size: 1.6rem;
+  animation: hint-nudge 1.4s ease-in-out infinite;
+}
+
+@keyframes hint-nudge {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0.18rem, -0.18rem); }
+}
+
 .contact-links {
   display: flex;
   flex-wrap: wrap;
@@ -687,6 +712,10 @@ button:focus-visible {
   .star {
     animation: none;
     opacity: 0.35;
+  }
+
+  .slide-hint-arrow {
+    animation: none;
   }
 }
 
