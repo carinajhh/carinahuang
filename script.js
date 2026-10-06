@@ -210,6 +210,52 @@
     });
   });
 
+  document.querySelectorAll(".project-video-trigger").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const media = button.closest(".project-media");
+      const videoId = button.dataset.youtubeId;
+      if (!media || !videoId) return;
+
+      const youtubeUrl = "https://youtu.be/fam5B4XaLqo?si=NN9IxG3naP9c9tde";
+      if (window.location.protocol === "file:") {
+        media.innerHTML = `
+          <div class="project-video-local-note">
+            <span>Embedded playback becomes available when the site is hosted.</span>
+            <a href="${youtubeUrl}" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+          </div>
+        `;
+        return;
+      }
+
+      const siteOrigin = window.location.origin || "https://carinajhh.github.io";
+
+      media.innerHTML = `
+        <iframe
+          class="project-video-frame"
+          src="https://www.youtube.com/embed/${videoId}?si=NN9IxG3naP9c9tde&autoplay=1&rel=0&origin=${encodeURIComponent(siteOrigin)}"
+          title="YogaFlow demo video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="origin"
+          allowfullscreen
+        ></iframe>
+        <a
+          class="project-youtube-link"
+          href="${youtubeUrl}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Open on YouTube ↗</a>
+        <a
+          class="project-slide-caption"
+          href="https://v0-yoga-pose-helper-app.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Open YogaFlow ↗</a>
+      `;
+    });
+  });
+
   let resizeTimer;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);

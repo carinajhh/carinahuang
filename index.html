@@ -172,8 +172,8 @@
           <p class="placeholder-kicker">Featured project</p>
           <h3>YogaFlow</h3>
           <p>
-            YogaFlow is an interactive yoga app that uses real-time body tracking to guide users through a session.
-            It compares a user’s pose to a reference, provides live match feedback, and supports Easy, Medium, and
+            YogaFlow is an interactive yoga app protoype that uses real-time body tracking to guide users through a session.
+            It compares a user's pose to a reference, provides live match feedback, and supports Easy, Medium, and
             Hard modes before transitioning into a guided meditation cooldown.
           </p>
           <div class="project-skills" aria-label="YogaFlow technologies and tools">
@@ -192,16 +192,26 @@
 
         <div class="project-slideshow" aria-label="Projects slideshow">
           <div class="project-slides" aria-live="polite">
-            <a
-              class="project-slide project-slide--image is-active"
-              href="https://v0-yoga-pose-helper-app.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open YogaFlow project"
-            >
-              <img src="images/yogaflow-thumbnail.png" alt="YogaFlow guided yoga pose helper project" />
-              <span class="project-slide-caption">Open YogaFlow ↗</span>
-            </a>
+            <div class="project-slide project-slide--image is-active" data-project-slide="1">
+              <div class="project-media">
+                <img class="project-thumbnail" src="images/yogaflow-thumbnail.png" alt="YogaFlow guided yoga pose helper project" />
+                <button type="button" class="project-video-trigger" data-youtube-id="fam5B4XaLqo">
+                  ▶ YogaFlow demo video
+                </button>
+                <a
+                  class="project-youtube-link"
+                  href="https://youtu.be/fam5B4XaLqo?si=NN9IxG3naP9c9tde"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Open on YouTube ↗</a>
+                <a
+                  class="project-slide-caption"
+                  href="https://v0-yoga-pose-helper-app.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Open YogaFlow ↗</a>
+              </div>
+            </div>
             <div class="project-slide" data-project-slide="2">
               <span class="project-placeholder-label">Next project</span>
               <span class="project-placeholder-note">Add another project here</span>
