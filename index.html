@@ -169,21 +169,52 @@
       <h2 class="section-title">Projects</h2>
       <div class="projects-layout">
         <div class="projects-copy">
-          <p class="placeholder-kicker">Coming soon</p>
-          <h3>Things I'm building</h3>
+          <p class="placeholder-kicker">Featured project</p>
+          <h3>YogaFlow</h3>
           <p>
-            This is a placeholder for a short introduction to my projects. I’ll add more details about the work,
-            ideas, and experiences I’m excited to share here.
+            YogaFlow is an interactive yoga app that uses real-time body tracking to guide users through a session.
+            It compares a user’s pose to a reference, provides live match feedback, and supports Easy, Medium, and
+            Hard modes before transitioning into a guided meditation cooldown.
           </p>
+          <div class="project-skills" aria-label="YogaFlow technologies and tools">
+            <span>MediaPipe</span>
+            <span>Python</span>
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Next.js</span>
+            <span>Node.js</span>
+            <span>Tailwind CSS</span>
+            <span>Cursor</span>
+            <span>v0</span>
+            <span>ChatGPT</span>
+          </div>
         </div>
 
-        <div class="project-slideshow-placeholder" aria-label="Projects slideshow placeholder">
-          <span class="project-placeholder-label">Project slideshow</span>
-          <span class="project-placeholder-note">Add project images here</span>
-          <div class="project-placeholder-dots" aria-hidden="true">
-            <span class="is-active"></span>
-            <span></span>
-            <span></span>
+        <div class="project-slideshow" aria-label="Projects slideshow">
+          <div class="project-slides" aria-live="polite">
+            <a
+              class="project-slide project-slide--image is-active"
+              href="https://v0-yoga-pose-helper-app.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open YogaFlow project"
+            >
+              <img src="images/yogaflow-thumbnail.png" alt="YogaFlow guided yoga pose helper project" />
+              <span class="project-slide-caption">Open YogaFlow ↗</span>
+            </a>
+            <div class="project-slide" data-project-slide="2">
+              <span class="project-placeholder-label">Next project</span>
+              <span class="project-placeholder-note">Add another project here</span>
+            </div>
+            <div class="project-slide" data-project-slide="3">
+              <span class="project-placeholder-label">Next project</span>
+              <span class="project-placeholder-note">Add another project here</span>
+            </div>
+          </div>
+          <div class="project-placeholder-dots" aria-label="Choose a project">
+            <button type="button" class="project-dot is-active" data-project-slide-to="1" aria-label="Show YogaFlow project" aria-current="true"></button>
+            <button type="button" class="project-dot" data-project-slide-to="2" aria-label="Show second project"></button>
+            <button type="button" class="project-dot" data-project-slide-to="3" aria-label="Show third project"></button>
           </div>
         </div>
       </div>
