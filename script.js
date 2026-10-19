@@ -277,6 +277,7 @@
       });
       media.querySelector(".project-video-next").addEventListener("click", (nextEvent) => {
         nextEvent.stopPropagation();
+        renderYogaFlowThumbnail(media);
         showProjectSlide(currentProjectSlide + 1);
       });
     });
