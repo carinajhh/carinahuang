@@ -440,6 +440,10 @@ button:focus-visible {
   max-width: 34rem;
 }
 
+.project-copy-panel[hidden] {
+  display: none;
+}
+
 .placeholder-kicker {
   margin: 0 0 0.5rem;
   color: var(--teal);
@@ -454,7 +458,7 @@ button:focus-visible {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
 }
 
-.projects-copy p:last-child {
+.project-copy-panel > p:not(.placeholder-kicker) {
   margin: 0;
   font-size: 1.05rem;
   line-height: 1.6;
@@ -573,23 +577,6 @@ button:focus-visible {
 
 .project-video-trigger:hover {
   background: var(--navy);
-}
-
-.project-youtube-link {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.5rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(13, 27, 42, 0.82);
-  color: var(--paper);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  text-decoration: none;
-}
-
-.project-youtube-link:hover {
-  background: var(--teal-dim);
 }
 
 .project-slide-caption {
@@ -781,6 +768,14 @@ button:focus-visible {
   color: var(--marquee-red);
   font-size: 1.6rem;
   animation: hint-nudge 1.4s ease-in-out infinite;
+}
+
+.project-slide-hint {
+  font-size: 1rem;
+}
+
+.project-slide-hint .slide-hint-arrow {
+  font-size: 1.8rem;
 }
 
 @keyframes hint-nudge {

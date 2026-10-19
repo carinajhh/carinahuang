@@ -90,6 +90,90 @@
       </section>
     </div>
 
+    <section id="projects" class="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-layout">
+        <div class="projects-copy">
+          <div class="project-copy-panel is-active" data-project-copy="1">
+            <p class="placeholder-kicker">Featured project</p>
+            <h3>Pantry Expiration Tracker</h3>
+            <p>
+              Pantry Expiration Tracker is a fridge-inspired dashboard that helps users manage food inventory and cook ingredients
+              before they expire. Its recipe backend searches TheMealDB using selected ingredients, then locally ranks results to
+              prioritize food that should be used soon. The top three recipes include match percentages, missing-ingredient labels,
+              and use-soon explanations, helping reduce food waste one delicious meal at a time.
+            </p>
+            <div class="project-skills" aria-label="Pantry Expiration Tracker technologies and tools">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Next.js</span>
+              <span>Tailwind CSS</span>
+              <span>Vercel</span>
+              <span>TheMealDB</span>
+            </div>
+          </div>
+          <div class="project-copy-panel" data-project-copy="2" hidden>
+            <p class="placeholder-kicker">Featured project</p>
+            <h3>YogaFlow</h3>
+            <p>
+              YogaFlow is an interactive yoga app prototype that uses real-time body tracking to guide users through a session.
+              Its interface and visual theme adapt to the time of day, while pose tracking compares a user's position to a
+              reference and provides live match feedback. Easy, Medium, and Hard modes lead into a guided meditation cooldown,
+              turning each session into a small reset for both body and mind.
+            </p>
+            <div class="project-skills" aria-label="YogaFlow technologies and tools">
+              <span>MediaPipe</span>
+              <span>Python</span>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Next.js</span>
+              <span>Node.js</span>
+              <span>Tailwind CSS</span>
+              <span>v0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-slideshow" aria-label="Projects slideshow">
+          <div class="project-slides" aria-live="polite">
+            <div class="project-slide project-slide--image is-active" data-project-slide="1">
+              <div class="project-media">
+                <img class="project-thumbnail" src="images/pantry-thumbnail.png" alt="Pantry Expiration Tracker project" />
+                <a
+                  class="project-slide-caption"
+                  href="https://pantry-expiration-tracker.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Open Pantry Tracker ↗</a>
+              </div>
+            </div>
+            <div class="project-slide project-slide--image" data-project-slide="2">
+              <div class="project-media">
+                <img class="project-thumbnail" src="images/yogaflow-thumbnail.png" alt="YogaFlow guided yoga pose helper project" />
+                <button type="button" class="project-video-trigger" data-youtube-id="fam5B4XaLqo">
+                  ▶ YogaFlow demo video
+                </button>
+                <a
+                  class="project-slide-caption"
+                  href="https://v0-yoga-pose-helper-app.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Open YogaFlow ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-placeholder-dots" aria-label="Choose a project">
+            <button type="button" class="project-dot is-active" data-project-slide-to="1" aria-label="Show Pantry Expiration Tracker project" aria-current="true"></button>
+            <button type="button" class="project-dot" data-project-slide-to="2" aria-label="Show YogaFlow project"></button>
+          </div>
+          <p class="slide-hint project-slide-hint">
+            <span class="slide-hint-arrow" aria-hidden="true">↗</span>
+            Click on the slide to see more projects!
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="about">
       <h2 class="section-title">About</h2>
       <div class="about-layout">
@@ -161,71 +245,6 @@
             <span class="slide-hint-arrow" aria-hidden="true">↗</span>
             Click on the slide to see more!
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-layout">
-        <div class="projects-copy">
-          <p class="placeholder-kicker">Featured project</p>
-          <h3>YogaFlow</h3>
-          <p>
-            YogaFlow is an interactive yoga app protoype that uses real-time body tracking to guide users through a session.
-            It compares a user's pose to a reference, provides live match feedback, and supports Easy, Medium, and
-            Hard modes before transitioning into a guided meditation cooldown.
-          </p>
-          <div class="project-skills" aria-label="YogaFlow technologies and tools">
-            <span>MediaPipe</span>
-            <span>Python</span>
-            <span>React</span>
-            <span>TypeScript</span>
-            <span>Next.js</span>
-            <span>Node.js</span>
-            <span>Tailwind CSS</span>
-            <span>Cursor</span>
-            <span>v0</span>
-            <span>ChatGPT</span>
-          </div>
-        </div>
-
-        <div class="project-slideshow" aria-label="Projects slideshow">
-          <div class="project-slides" aria-live="polite">
-            <div class="project-slide project-slide--image is-active" data-project-slide="1">
-              <div class="project-media">
-                <img class="project-thumbnail" src="images/yogaflow-thumbnail.png" alt="YogaFlow guided yoga pose helper project" />
-                <button type="button" class="project-video-trigger" data-youtube-id="fam5B4XaLqo">
-                  ▶ YogaFlow demo video
-                </button>
-                <a
-                  class="project-youtube-link"
-                  href="https://youtu.be/fam5B4XaLqo?si=NN9IxG3naP9c9tde"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >Open on YouTube ↗</a>
-                <a
-                  class="project-slide-caption"
-                  href="https://v0-yoga-pose-helper-app.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >Open YogaFlow ↗</a>
-              </div>
-            </div>
-            <div class="project-slide" data-project-slide="2">
-              <span class="project-placeholder-label">Next project</span>
-              <span class="project-placeholder-note">Add another project here</span>
-            </div>
-            <div class="project-slide" data-project-slide="3">
-              <span class="project-placeholder-label">Next project</span>
-              <span class="project-placeholder-note">Add another project here</span>
-            </div>
-          </div>
-          <div class="project-placeholder-dots" aria-label="Choose a project">
-            <button type="button" class="project-dot is-active" data-project-slide-to="1" aria-label="Show YogaFlow project" aria-current="true"></button>
-            <button type="button" class="project-dot" data-project-slide-to="2" aria-label="Show second project"></button>
-            <button type="button" class="project-dot" data-project-slide-to="3" aria-label="Show third project"></button>
-          </div>
         </div>
       </div>
     </section>

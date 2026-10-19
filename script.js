@@ -181,6 +181,7 @@
 
   const projectSlides = [...document.querySelectorAll(".project-slide")];
   const projectDots = [...document.querySelectorAll(".project-dot")];
+  const projectCopyPanels = [...document.querySelectorAll(".project-copy-panel")];
   let currentProjectSlide = 0;
 
   function showProjectSlide(index) {
@@ -195,13 +196,23 @@
       if (isActive) dot.setAttribute("aria-current", "true");
       else dot.removeAttribute("aria-current");
     });
+    projectCopyPanels.forEach((panel) => {
+      const isActive = Number(panel.dataset.projectCopy) === currentProjectSlide + 1;
+      panel.hidden = !isActive;
+      panel.classList.toggle("is-active", isActive);
+    });
   }
 
+  showProjectSlide(0);
+
   projectSlides.forEach((slide, slideIndex) => {
-    if (slide.tagName === "A") return;
     slide.addEventListener("click", () => {
       if (slideIndex === currentProjectSlide) showProjectSlide(currentProjectSlide + 1);
     });
+  });
+
+  document.querySelectorAll(".project-slide a").forEach((link) => {
+    link.addEventListener("click", (event) => event.stopPropagation());
   });
 
   projectDots.forEach((dot) => {
@@ -217,12 +228,10 @@
       const videoId = button.dataset.youtubeId;
       if (!media || !videoId) return;
 
-      const youtubeUrl = "https://youtu.be/fam5B4XaLqo?si=NN9IxG3naP9c9tde";
       if (window.location.protocol === "file:") {
         media.innerHTML = `
           <div class="project-video-local-note">
             <span>Embedded playback becomes available when the site is hosted.</span>
-            <a href="${youtubeUrl}" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
           </div>
         `;
         return;
@@ -240,12 +249,6 @@
           referrerpolicy="origin"
           allowfullscreen
         ></iframe>
-        <a
-          class="project-youtube-link"
-          href="${youtubeUrl}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Open on YouTube ↗</a>
         <a
           class="project-slide-caption"
           href="https://v0-yoga-pose-helper-app.vercel.app/"
