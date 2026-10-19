@@ -544,6 +544,34 @@ button:focus-visible {
   border: 0;
 }
 
+.project-video-controls {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.project-video-controls button {
+  padding: 0.5rem 0.7rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(13, 27, 42, 0.82);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.project-video-controls button:hover {
+  background: var(--teal-dim);
+}
+
 .project-video-local-note {
   display: flex;
   height: 100%;

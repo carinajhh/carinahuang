@@ -221,7 +221,24 @@
     });
   });
 
-  document.querySelectorAll(".project-video-trigger").forEach((button) => {
+  function renderYogaFlowThumbnail(media) {
+    media.innerHTML = `
+      <img class="project-thumbnail" src="images/yogaflow-thumbnail.png" alt="YogaFlow guided yoga pose helper project" />
+      <button type="button" class="project-video-trigger" data-youtube-id="fam5B4XaLqo">
+        ▶ YogaFlow demo video
+      </button>
+      <a
+        class="project-slide-caption"
+        href="https://v0-yoga-pose-helper-app.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Open YogaFlow ↗</a>
+    `;
+    attachVideoTrigger(media.querySelector(".project-video-trigger"));
+  }
+
+  function attachVideoTrigger(button) {
+    if (!button) return;
     button.addEventListener("click", (event) => {
       event.stopPropagation();
       const media = button.closest(".project-media");
@@ -249,15 +266,23 @@
           referrerpolicy="origin"
           allowfullscreen
         ></iframe>
-        <a
-          class="project-slide-caption"
-          href="https://v0-yoga-pose-helper-app.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Open YogaFlow ↗</a>
+        <div class="project-video-controls">
+          <button type="button" class="project-video-close">← Thumbnail</button>
+          <button type="button" class="project-video-next">Next project →</button>
+        </div>
       `;
+      media.querySelector(".project-video-close").addEventListener("click", (closeEvent) => {
+        closeEvent.stopPropagation();
+        renderYogaFlowThumbnail(media);
+      });
+      media.querySelector(".project-video-next").addEventListener("click", (nextEvent) => {
+        nextEvent.stopPropagation();
+        showProjectSlide(currentProjectSlide + 1);
+      });
     });
-  });
+  }
+
+  document.querySelectorAll(".project-video-trigger").forEach(attachVideoTrigger);
 
   let resizeTimer;
   window.addEventListener("resize", () => {
